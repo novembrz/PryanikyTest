@@ -33,6 +33,8 @@ class MainCell: UITableViewCell {
                         self.activityIndicator.isHidden = true
                     }
                 }
+            } else {
+                pryanikyImageView.isHidden = true
             }
         }
     }

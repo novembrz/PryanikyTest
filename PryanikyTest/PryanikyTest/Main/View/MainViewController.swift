@@ -11,13 +11,17 @@ class MainViewController: UIViewController {
     
     var viewModel: MainViewModelType?
     var tableView: UITableView!
+    var backButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = MainViewModel()
         createTableView()
         loadData()
+        setupSearchBar()
     }
+    
+    //MARK: - View Logic
     
     private func loadData(){
         viewModel?.getData { [weak self] in
@@ -27,12 +31,38 @@ class MainViewController: UIViewController {
         }
     }
     
-    private func createTableView(){
+    @objc func backButtonAction(){
+        viewModel?.backButtonAction{ [weak self] in
+            DispatchQueue.main.async {
+                self?.backButton.isEnabled = false
+                self?.tableView.reloadData()
+            }
+        }
+    }
+}
+
+//MARK: - Setup UI
+
+extension MainViewController {
+    
+    private func createTableView() {
         tableView = UITableView(frame: view.bounds)
         view.addSubview(tableView)
         tableView.register(MainCell.self, forCellReuseIdentifier: MainCell.reuseId)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = 100
+    }
+    
+    private func setupSearchBar() {
+        navigationController?.navigationBar.barTintColor = .white
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = .orange
+        navigationItem.title = "Пряники"
+        
+        backButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(backButtonAction))
+        backButton.isEnabled = false
+        navigationItem.rightBarButtonItem = backButton
     }
 }
 
@@ -58,6 +88,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         guard let viewModel = viewModel else {return}
         viewModel.didSelectedRow(forIndexPath: indexPath)
         DispatchQueue.main.async {
+            self.backButton.isEnabled = true
             self.tableView.reloadData()
         }
     }

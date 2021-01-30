@@ -9,6 +9,7 @@ import Foundation
 
 protocol MainViewModelType {
     func getData(completion: @escaping() -> ())
+    func backButtonAction(completion: @escaping() -> ())
     func numberOfRows() -> Int?
     func cellViewModel(forIndexPath indexPath: IndexPath) -> MainCellViewModelType?
     func didSelectedRow(forIndexPath indexPath: IndexPath)
@@ -33,6 +34,22 @@ class MainViewModel: MainViewModelType {
                         }
                     }
                 }
+            }
+        }
+    }
+    
+    func backButtonAction(completion: @escaping() -> ()) {
+        
+        if !self.variants.isEmpty {
+            DispatchQueue.main.async {
+                self.variants.removeAll()
+                completion()
+            }
+        } else if self.dataText != nil {
+            DispatchQueue.main.async {
+                self.dataText = nil
+                self.imgString = nil
+                completion()
             }
         }
     }

@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2CDB3637497514A5512D3E73 /* Pods_PryanikyTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C6A7EBA7492F3B73C3CE9E /* Pods_PryanikyTest.framework */; };
-		C234017625C5AC2F00DDF0B8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C234017525C5AC2F00DDF0B8 /* DetailViewController.swift */; };
-		C234017925C5AC6900DDF0B8 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C234017825C5AC6900DDF0B8 /* DetailViewModel.swift */; };
 		C234193625C5A3B800A51067 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C234193525C5A3B800A51067 /* MainViewController.swift */; };
 		C234193925C5A3D100A51067 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C234193825C5A3D100A51067 /* MainCell.swift */; };
 		C25877A825C5647100933114 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25877A725C5647100933114 /* AppDelegate.swift */; };
@@ -25,8 +23,6 @@
 /* Begin PBXFileReference section */
 		53C6A7EBA7492F3B73C3CE9E /* Pods_PryanikyTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PryanikyTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59D572EB24604CD5B6ACE1FA /* Pods-PryanikyTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PryanikyTest.debug.xcconfig"; path = "Target Support Files/Pods-PryanikyTest/Pods-PryanikyTest.debug.xcconfig"; sourceTree = "<group>"; };
-		C234017525C5AC2F00DDF0B8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		C234017825C5AC6900DDF0B8 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		C234193525C5A3B800A51067 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C234193825C5A3D100A51067 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		C25877A425C5647100933114 /* PryanikyTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PryanikyTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,31 +59,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		C234017125C5A85800DDF0B8 /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-				C234017225C5A86B00DDF0B8 /* View */,
-				C234017325C5A88900DDF0B8 /* ViewModel */,
-			);
-			path = Detail;
-			sourceTree = "<group>";
-		};
-		C234017225C5A86B00DDF0B8 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C234017525C5AC2F00DDF0B8 /* DetailViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C234017325C5A88900DDF0B8 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				C234017825C5AC6900DDF0B8 /* DetailViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		C234193125C5A34700A51067 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,7 +93,6 @@
 				C25877C825C5683F00933114 /* Service */,
 				C25877C125C567EC00933114 /* Model */,
 				C29A7A6A25C5995F00FD1899 /* Main */,
-				C234017125C5A85800DDF0B8 /* Detail */,
 				C25877BD25C5669100933114 /* Supporting files */,
 			);
 			path = PryanikyTest;
@@ -302,10 +272,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C234017625C5AC2F00DDF0B8 /* DetailViewController.swift in Sources */,
 				C234193625C5A3B800A51067 /* MainViewController.swift in Sources */,
 				C25877CA25C5686400933114 /* NetworkService.swift in Sources */,
-				C234017925C5AC6900DDF0B8 /* DetailViewModel.swift in Sources */,
 				C25877C625C5683A00933114 /* JSONModel.swift in Sources */,
 				C2CF5DDC25C5856400BD64E2 /* MainCellViewModel.swift in Sources */,
 				C25877A825C5647100933114 /* AppDelegate.swift in Sources */,
