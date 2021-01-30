@@ -14,7 +14,6 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .orange
         viewModel = MainViewModel()
         createTableView()
         loadData()
@@ -53,6 +52,14 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         tableViewCell.viewModel = cellViewModel
 
         return tableViewCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewModel = viewModel else {return}
+        viewModel.didSelectedRow(forIndexPath: indexPath)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
 

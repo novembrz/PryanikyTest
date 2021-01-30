@@ -9,12 +9,15 @@ import Foundation
 
 protocol MainCellViewModelType: class {
     var text: String { get }
+    var imgString: String? { get }
 }
 
 class MainCellViewModel: MainCellViewModelType {
     var text: String
+    var imgString: String?
     
-    init(text: String) {
+    init(text: String, imgString: String?) {
         self.text = text
+        self.imgString = imgString
     }
 }
